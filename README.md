@@ -44,15 +44,15 @@ _unix-accounts_ server is on, using its provided commandline interface.
 
 Use docker-container (preferred), which starts the server as entrypoint:
 
-        docker run -it \
-          --name unix-accounts \
-          --volume=unix-accounts:/var/opt/unix-accounts \
-          --network=lan \
-          1nfiniteloop/unix-accounts:latest
+    docker run -it \
+      --name unix-accounts \
+      --volume=unix-accounts:/var/opt/unix-accounts \
+      --network=lan \
+      1nfiniteloop/unix-accounts:latest
 
 Or install with pip:
 
-        pip install unix-accounts
+    pip install unix-accounts
 
 ### Server
 
@@ -62,31 +62,31 @@ this folder and give permissions accordingly, or provide alternative path with:
 
 Create a new token to give api access to passwords:
 
-        unix-accounts-server --generate-token
+    unix-accounts-server --generate-token
 
 Start server with:
 
-        unix-accounts-server
+    unix-accounts-server
 
 Accounts can now be accessed with:
 
-        curl -i \
-            -H "Authorization: bearer MOE66ljNwXXF8R81OqGrDfbWmuZUjmlarDvdZt4X1dQ" \
-            http://localhost:8025/api/{user,group,password}?name=foo
+    curl -i \
+        -H "Authorization: bearer MOE66ljNwXXF8R81OqGrDfbWmuZUjmlarDvdZt4X1dQ" \
+        http://localhost:8025/api/{user,group,password}?name=foo
 
 ### Commandline interface
 
 If installed with pip, access cli with:
 
-        unix-accounts
+    unix-accounts
 
 If using docker-container, access cli with:
 
-        docker exec -it unix-accounts unix-accounts
+    docker exec -it unix-accounts unix-accounts
 
 __General usage:__
 
-        unix-accounts {group,user,group-member,password}
+    unix-accounts {group,user,group-member,password}
 
 Use flag `--help` to see all options.
 
@@ -96,26 +96,26 @@ instead of on each command invocation.
 
 Example: Add user
 
-        unix-accounts# user add foo --uid 10000
-        +-----------+-------+-------+-------+-----------+-----------+------------------+
-        | User name | Id    | Group | Gecos | Home dir  | Shell     | Group membership |
-        +-----------+-------+-------+-------+-----------+-----------+------------------+
-        | foo       | 10000 | foo   |       | /home/foo | /bin/bash |                  |
-        +-----------+-------+-------+-------+-----------+-----------+------------------+
+    unix-accounts# user add foo --uid 10000
+    +-----------+-------+-------+-------+-----------+-----------+------------------+
+    | User name | Id    | Group | Gecos | Home dir  | Shell     | Group membership |
+    +-----------+-------+-------+-------+-----------+-----------+------------------+
+    | foo       | 10000 | foo   |       | /home/foo | /bin/bash |                  |
+    +-----------+-------+-------+-------+-----------+-----------+------------------+
 
 Example: add user to a group
 
-        unix-accounts# group-member add foo developer
-        +------------+-------+-----------------+
-        | Group name | Id    | User membership |
-        +------------+-------+-----------------+
-        | developer  | 10001 | foo             |
-        +------------+-------+-----------------+
+    unix-accounts# group-member add foo developer
+    +------------+-------+-----------------+
+    | Group name | Id    | User membership |
+    +------------+-------+-----------------+
+    | developer  | 10001 | foo             |
+    +------------+-------+-----------------+
 
 Example: set new password
 
-        unix-accounts# password foo
-        New password:
+    unix-accounts# password foo
+    New password:
 
 ## Develop
 
@@ -145,4 +145,4 @@ Change to directory `unix-accounts/src`.
 
 Note: The docker build uses the local built python package.
 
-        docker build --tag 1nfiniteloop/unix-accounts:latest .
+    docker build --tag 1nfiniteloop/unix-accounts:latest .
