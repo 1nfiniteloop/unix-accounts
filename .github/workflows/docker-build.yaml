@@ -62,11 +62,3 @@ jobs:
           tags: |
             1nfiniteloop/unix-accounts:latest
             1nfiniteloop/unix-accounts:1.0.0
-
-      - name: Update docker hub description
-        uses: peter-evans/dockerhub-description@v2
-        env:
-          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USER }}
-          DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_TOKEN }}
-          DOCKERHUB_REPOSITORY: 1nfiniteloop/unix-accounts
-
