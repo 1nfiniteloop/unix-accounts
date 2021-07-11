@@ -36,7 +36,6 @@ setup(
         "terminaltables>=3.1",
         "tornado>=6.1"
     ],
-    # data_files=[("unix-accounts", ["data/api-tokens"])],
     entry_points={
         "console_scripts": [
             "unix-accounts-server=unix_accounts.bin.server:main",
