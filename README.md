@@ -38,9 +38,9 @@ part of the nss api. Tools for changing accounts such as `passwd`, `useradd`,
 Account administration is therefore done on the same computer as the
 _unix-accounts_ server is on, using its provided commandline interface.
 
-## Install
+## Usage
 
-### Install and usage
+### Install
 
 Use docker-container (preferred), which starts the server as entrypoint:
 
@@ -54,7 +54,7 @@ Or install with pip:
 
         pip install unix-accounts
 
-### Server usage
+### Server
 
 __If installed with pip:__ Data is stored in `/var/opt/unix-accounts`. Create
 this folder and give permissions accordingly, or provide alternative path with:
@@ -74,7 +74,7 @@ Accounts can now be accessed with:
             -H "Authorization: bearer MOE66ljNwXXF8R81OqGrDfbWmuZUjmlarDvdZt4X1dQ" \
             http://localhost:8025/api/{user,group,password}?name=foo
 
-### Commandline interface usage
+### Commandline interface
 
 If installed with pip, access cli with:
 
