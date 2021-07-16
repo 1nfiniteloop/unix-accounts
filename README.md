@@ -48,7 +48,8 @@ Use docker-container (preferred), which starts the server as entrypoint:
       --name unix-accounts \
       --volume=unix-accounts:/var/opt/unix-accounts \
       --network=lan \
-      1nfiniteloop/unix-accounts:latest
+      1nfiniteloop/unix-accounts:latest \
+        --host=0.0.0.0
 
 Or install with pip:
 
